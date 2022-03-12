@@ -3,7 +3,7 @@
 import math
 import random
 
-class Player:
+class Player():
     def __init__(self, letter):
         self.letter = letter # letter is x or o
 
