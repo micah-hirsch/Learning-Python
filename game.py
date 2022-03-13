@@ -11,20 +11,16 @@ from player import HumanPlayer, RandomComputerPlayer
 
 class TicTacToe():
     def __init__(self):
-        self.board = self.make_board() # 3x3 board for Tic Tac Toe
+        self.board = [" " for _ in range(9)] # 3x3 board for Tic Tac Toe
         self.current_winner = None
 
-    @staticmethod
-    def make_board():
-        return [" " for _ in range(9)]
-
     def print_board(self):
-        for row in [self.board[1*3:(i+1)*3] for i in range(3)]:
+        for row in [self.board[i*3:(i+1) * 3] for i in range(3)]:
             print("| " + " | ".join(row) + " |")
 
     @staticmethod
     def print_board_nums():
-        number_board = [[str(i) for i in range(j*3, (j+1)*3)] for j in range(3)]
+        number_board = [[str(i) for i in range(j*3,(j+1)*3)] for j in range(3)]
         for row in number_board:
             print("| " + " | ".join(row) + " |")
 
@@ -37,7 +33,7 @@ class TicTacToe():
         return False
 
     def winner(self, square, letter):
-        row_ind = math.floor(square/3)
+        row_ind = square//3
         row = self.board[row_ind*3 : (row_ind + 1) * 3]
         if all([spot == letter for spot in row]):
             return True
@@ -58,7 +54,7 @@ class TicTacToe():
         return False
 
     def available_moves(self):
-        return [i for i, x in enumerate(self.board) if x == " "]
+        return [i for i, spot in enumerate(self.board) if spot == " "]
 
     def empty_squares(self):
         return " " in self.board
@@ -80,7 +76,7 @@ def play(game, x_player, o_player, print_game=True):
 
         if game.make_move(square, letter):
             if print_game:
-                print(letter + f" makes a move to square {square}".format(squareR))
+                print(letter + " makes a move to square {}".format(square))
                 game.print_board()
                 print("")
 

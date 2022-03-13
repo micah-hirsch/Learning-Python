@@ -31,7 +31,7 @@ class HumanPlayer(Player):
             square = input(self.letter + "'s turn. Input move (0-8): ")
             try:
                 val = int(square)
-                if value not in game.available_moves():
+                if val not in game.available_moves():
                     raise ValueError
                 valid_square = True
             except ValueError:
