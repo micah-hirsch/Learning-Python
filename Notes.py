@@ -113,3 +113,58 @@ print(coordinates[1]) # index
 list_coordinates = [(4, 5), (6, 7), (8, 9)] # a list of tuples
 
 # Functions
+
+def say_hi():
+    print("Hello User")
+
+say_hi()
+
+def say_hi(name):
+    print(f"Hello {name}")
+
+say_hi("Micki")
+
+# Return Statement
+
+def cube(num):
+    return num*num*num
+
+result = cube(4)
+print(result)
+
+# If Statements
+
+is_male = False
+is_tall = False
+
+if is_male or is_tall:
+    print("You are either male,tall, or both")
+else:
+    print("You are neither male or tall")
+
+if is_male and is_tall:
+    print("You are male and tall")
+else:
+    print("You are either not male, not tall, or both")
+
+if is_male and is_tall:
+    print("You are male and tall")
+elif is_male and not(is_tall):
+    print("You are a male, but not tall")
+elif not(is_male) and is_tall:
+    print("You are not a male, but you are tall")
+else:
+    print("You not a male and not tall")
+
+# If statements & comparisons
+
+def max_num(num1, num2, num3):
+    if num1 >= num2 and num1 >= num3:
+        return num1
+    elif num2 >= num1 and num2 >= num3:
+        return num2
+    else:
+        return num3
+
+print(max_num(3, 4, 5))
+
