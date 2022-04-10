@@ -168,3 +168,108 @@ def max_num(num1, num2, num3):
 
 print(max_num(3, 4, 5))
 
+# Dictionaries
+
+month_conversions = {
+    "Jan": "January",
+    "Feb": "February",
+    "Mar": "March",
+    "Apr": "April",
+    "May": "May",
+    "Jun": "June",
+    "Jul": "July",
+    "Aug": "August",
+    "Sep": "September",
+    "Oct": "October",
+    "Nov": "November",
+    "Dec": "December",
+}
+
+print(month_conversions["Nov"]) #give value associated with key
+print(month_conversions.get("Dec", "Not a valid key")) # Can give a default value
+
+# While loops
+
+i = 1
+while i <= 10:
+    print(i)
+    i = i + 1
+
+print("Done with loop")
+
+# For loops
+
+for letter in "Giraffe Academy":
+    print(letter)
+
+for index in range(10):
+    print(index)
+
+# Exponent Function
+
+print(2**3)
+
+def raise_to_power(base_num, pow_num):
+    result = 1
+    for index in range(pow_num):
+        result = result * base_num
+    return result
+
+print(raise_to_power(3, 2))
+
+# 2D Lists and Nested Loops
+
+number_grid = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [0]
+]
+
+print(number_grid[0][0]) #will print one from number_grid
+print(number_grid[2][1]) # printing out 8 from number_grid
+
+## nested for loop
+
+for row in number_grid:
+    for column in row:
+        print(column)
+
+# Try/Except
+## A way to catch invalid inputs/calculations, etc...
+
+try:
+    number = int(input("Enter a number: "))
+    print(number)
+except ValueError:
+    print("Invalid Input")
+
+# Reading Files
+
+file_name = open("type name of file or path to the file", "r")  # read mode
+file_name = open("type name of file or path to the file", "w")  # can change file
+file_name = open("type name of file or path to the file", "a")  # apphend info to end of the file
+file_name = open("type name of file or path to the file", "r+")  # read and write mode
+
+file_name.close()
+
+print(file_name.readable())  # is the file readable?
+print(file_name.read())  # print out contents of a file
+print(file_name.readline())  # print out specific line of a file (line by line)
+print(file_name.readline()[1])  # print out line at index 1 of a file
+
+# Writing to files
+
+## Appending a file
+
+file_name.write("add something to file")
+file_name.write("\nadd something to file")  # new line character
+
+# Modules and pip
+
+# importing functions from other py files
+
+## import name_of_file  this uses all the functions from a file
+## print(name_of_file.function()) using function from different file here
+
+### pip is used in terminal
