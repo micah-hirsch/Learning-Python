@@ -273,3 +273,37 @@ file_name.write("\nadd something to file")  # new line character
 ## print(name_of_file.function()) using function from different file here
 
 ### pip is used in terminal
+
+# Classes and Objects
+
+class Student:
+    def __init__(self, name, major, gpa, is_on_probation):
+        self.name = name
+        self.major = major
+        self.gpa = gpa
+        self.is_on_probation = is_on_probation
+
+#from file import Student #importing class from separate file (usually)
+
+student1 = Student("Jim", "Business", 3.1, False)  # student object
+
+print(student1.name)  # Access attributes of student object
+
+# Object functions
+
+class Student:
+    def __init__(self, name, major, gpa):
+        self.name = name
+        self.major = major
+        self.gpa = gpa
+
+    def on_honor_roll(self):
+        if self.gpa >= 3.5:
+            return True
+        else:
+            return False
+
+student1 = Student("Oscar", "Accounting", 3.1)
+student2 = Student("Phyllis", "Business", 3.8)
+
+print(student2.on_honor_roll())
